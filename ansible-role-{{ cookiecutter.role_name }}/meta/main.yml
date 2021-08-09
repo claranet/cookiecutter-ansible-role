@@ -1,0 +1,28 @@
+galaxy_info:
+  role_name: "{{ cookiecutter.role_name }}"
+  namespace: "claranet"
+  description: "{{ cookiecutter.role_description }}"
+  author: "{{ cookiecutter.author }}"
+  company: "Claranet France"
+
+  license: "MPL2"
+
+  min_ansible_version: {{ cookiecutter.ansible_min_version }}
+
+  galaxy_tags: {{ (cookiecutter.galaxy_tags | default('')).split() }}
+
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Amazon
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+dependencies: {{ (cookiecutter.role_dependencies | default('')).split() }}

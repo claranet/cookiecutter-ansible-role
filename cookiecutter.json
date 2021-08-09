@@ -1,0 +1,10 @@
+{
+  "role_name": "apache",
+  "role_description": "Install and configure Apache 2",
+  "author": "Claranet",
+  "ansible_min_version": "2.10",
+  "galaxy_tags": "claranet {{ cookiecutter.role_name }}",
+  "dependencies": "",
+  "init_repository": "y",
+  "os_specific_vars": "y"
+}
