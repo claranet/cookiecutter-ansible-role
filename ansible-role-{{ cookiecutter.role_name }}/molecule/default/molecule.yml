@@ -18,6 +18,7 @@ platforms:
       - SYS_ADMIN
       - SYS_TIME
       - LINUX_IMMUTABLE
+    command: "/lib/systemd/systemd"
 
 provisioner:
   name: ansible
