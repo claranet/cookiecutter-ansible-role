@@ -10,6 +10,7 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   lint:
+    name: Lint
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
@@ -21,13 +22,36 @@ jobs:
         with:
           command: lint
 
+  setup:
+    name: Setup scenarios matrix
+    runs-on: ubuntu-20.04
+    outputs:
+      scenarios: ${{ steps.matrix.outputs.scenarios }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: matrix
+        run: |
+          JSON="["
+
+          for s in $(find molecule -mindepth 1 -maxdepth 1 -type d -exec basename "{}" \;); do
+            JSON="${JSON}\"${s}\","
+          done
+
+          JSON="${JSON%?}"
+          JSON="$JSON]"
+
+          echo "::set-output name=scenarios::$(echo $JSON)"
+
   test:
+    name: Scenario "${{ matrix.scenario }}" on ${{ matrix.config.image }}:${{ matrix.config.tag }}
     needs:
       - lint
+      - setup
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
+        scenario: ${{ fromJson(needs.setup.outputs.scenarios) }}
         config:
           - image: "amazonlinux"
             tag: "latest"
@@ -39,6 +63,7 @@ jobs:
             tag: "10"
           - image: "ubuntu"
             tag: "20.04"
+
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -49,4 +74,5 @@ jobs:
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
+          scenario: ${{ matrix.scenario }}
 {% endraw -%}
