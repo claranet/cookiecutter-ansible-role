@@ -6,7 +6,7 @@ driver:
   name: docker
 
 platforms:
-  - name: claranet_{{ cookiecutter.role_name }}_${image:-debian}-${tag:-latest}
+  - name: claranet_{{ cookiecutter.role_name }}_${image:-debian}-${tag:-latest}-${scenario:-default}
     image: ${image:-debian}:${tag:-latest}
     privileged: true
     tty: true
