@@ -58,8 +58,9 @@ jobs:
         config:
           - image: "amazonlinux"
             tag: "latest"
-          - image: "fedora"
-            tag: "28"
+          - name: "redhat"
+            image: "registry.access.redhat.com/ubi8/ubi"
+            tag: "latest"
           - image: "debian"
             tag: "11"
           - image: "debian"
@@ -78,4 +79,6 @@ jobs:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
           scenario: ${{ matrix.scenario }}
+        env:
+          name: ${{ matrix.config.name }}
 {% endraw -%}

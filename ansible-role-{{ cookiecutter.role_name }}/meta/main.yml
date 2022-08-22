@@ -7,7 +7,7 @@ galaxy_info:
 
   license: "MPL2"
 
-  min_ansible_version: {{ cookiecutter.ansible_min_version }}
+  min_ansible_version: "{{ cookiecutter.ansible_min_version }}"
 
   galaxy_tags: {{ (cookiecutter.galaxy_tags | default('')).split() }}
 
