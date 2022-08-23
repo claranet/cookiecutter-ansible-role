@@ -3,11 +3,7 @@
 {% raw %}
 - name: Gather OS specific variables
   ansible.builtin.include_vars: "{{ loop_vars }}"
-<<<<<<< Updated upstream
-  loop: "{{ query('first_found', params) }}"
-=======
   loop: "{{ query('ansible.builtin.first_found', params) }}"
->>>>>>> Stashed changes
   vars:
     params:
       files:
