@@ -8,6 +8,7 @@ parseable: true
 
 use_default_rules: true
 
+<<<<<<< Updated upstream
 enable_list:
   # Specific to use of command and shell modules
   - command-instead-of-module
@@ -62,6 +63,8 @@ enable_list:
   # External linter which will also produce its own rule codes.
   - yaml
 
+=======
+>>>>>>> Stashed changes
 warn_list:
   - experimental  # all rules tagged as experimental
   - meta-no-info  # meta/main.yml should contain relevant info
@@ -69,5 +72,6 @@ warn_list:
 
 skip_list:
   - role-name  # BUG
+  - name[casing]
 
 verbosity: 1
