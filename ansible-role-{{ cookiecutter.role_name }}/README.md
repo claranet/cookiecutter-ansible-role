@@ -2,7 +2,7 @@
 [![Maintainer](https://img.shields.io/badge/maintained%20by-claranet-e00000?style=flat-square)](https://www.claranet.fr/)
 [![License](https://img.shields.io/github/license/claranet/ansible-role-{{ cookiecutter.role_name }}?style=flat-square)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/claranet/ansible-role-{{ cookiecutter.role_name }}?style=flat-square)](https://github.com/claranet/ansible-role-{{ cookiecutter.role_name }}/releases)
-[![Status](https://img.shields.io/github/workflow/status/claranet/ansible-role-{{ cookiecutter.role_name }}/Ansible%20Molecule?style=flat-square&label=tests)](https://github.com/claranet/ansible-role-{{ cookiecutter.role_name }}/actions?query=workflow%3A%22Ansible+Molecule%22)
+[![Status](https://img.shields.io/github/actions/workflow/status/claranet/ansible-role-{{ cookiecutter.role_name }}/molecule.yml?branch=main&label=tests&style=flat-square)](https://github.com/claranet/ansible-role-{{ cookiecutter.role_name }}/actions?query=workflow%3A%22Ansible+Molecule%22)
 [![Ansible version](https://img.shields.io/badge/ansible-%3E%3D{{ cookiecutter.ansible_min_version }}-black.svg?style=flat-square&logo=ansible)](https://github.com/ansible/ansible)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible-galaxy-black.svg?style=flat-square&logo=ansible)](https://galaxy.ansible.com/claranet/{{ cookiecutter.role_name }})
 
