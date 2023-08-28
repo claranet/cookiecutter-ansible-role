@@ -1,6 +1,7 @@
 ---
 dependency:
-  name: galaxy
+  name: shell
+  command: python3 -m pip install pytest-testinfra
 
 driver:
   name: docker
